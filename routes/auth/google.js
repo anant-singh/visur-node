@@ -3,7 +3,7 @@
 var User = require('../../models/user');
 var config = require('../../config');
 var request = require('request');
-var auth_lib = require('../../lib/auth_lib');
+var auth_lib = require('../../lib/authLib');
 
 module.exports = function(router){
     router.post('/', function(req, res) {

@@ -1,6 +1,6 @@
 'use strict';
 
-var auth = require('../../lib/auth_lib');
+var auth = require('../../lib/authLib');
 var User = require('../../models/user');
 
 module.exports = function (router) {

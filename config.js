@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
-    TOKEN_SECRET: process.env.TOKEN_SECRET || 'Token Secret',
+    TOKEN_SECRET: process.env.TOKEN_SECRET || 'ababvjliuaowcfhmp9',
     MONGO_URI: process.env.MONGO_URI || 'localhost:',
-    FACEBOOK_SECRET: process.env.FACEBOOK_SECRET || 'Facebook Secret',
+    FACEBOOK_SECRET: process.env.FACEBOOK_SECRET || '28f593638fde9204b6e5cd41b84c316b',
     FOURSQUARE_SECRET: process.env.FOURSQUARE_SECRET || 'Foursquare Client Secret',
     GOOGLE_SECRET: process.env.GOOGLE_SECRET || 'Google Client Secret',
     GITHUB_SECRET: process.env.GITHUB_SECRET || 'GitHub Client Secret',
