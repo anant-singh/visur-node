@@ -20,11 +20,16 @@ module.exports = function (router) {
             res.send(token);
         });
     });
+
     router.delete('/token', auth.ensureAuthentication, function (req, res) {
         var authToken = req.query.authToken;
         if (authToken) {
             Device.findOne({authToken: authToken}, function (err, device) {
-                if (device !== null || !device.authorized) {
+                if (device === null) {
+                    return;
+                }
+
+                if (!device.authorized) {
                     device.remove(function () {
                         res.send('Removed');
                     });

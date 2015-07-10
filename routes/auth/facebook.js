@@ -4,6 +4,7 @@ var User = require('../../models/user');
 var config = require('../../config');
 var request = require('request');
 var auth_lib = require('../../lib/authLib');
+var jwt = require('jwt-simple');
 
 module.exports = function(router){
 

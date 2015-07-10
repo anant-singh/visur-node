@@ -6,9 +6,8 @@ module.exports = function(webIO){
 
     webIO.on('connection', function(socket){
         auth.webAuth(socket, function(socket){
-            setTimeout(function(){
-                socket.to(socket.userId).emit('ping', 'data');
-            }, 1000);
+            socket.to(socket.userId).emit('ping', 'data');
+            return;
         })
     });
 
