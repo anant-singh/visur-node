@@ -51,7 +51,10 @@ module.exports = function (router) {
                     device.accessToken = accessToken;
                     device.authorized = true;
                     device.save(function (err) {
-                        res.send(accessToken);
+                        res.send({
+                            status: 'success',
+                            accessToken: accessToken
+                        });
                     });
                 }
                 else {

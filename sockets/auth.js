@@ -4,7 +4,7 @@ var Device = require('../models/device'),
     authLib = require('../lib/authLib');
 
 exports.deviceAuth = function(socket, next){
-    var accessToken = socket.handshake.query.accesToken;
+    var accessToken = socket.handshake.query.accessToken;
 
     if(!accessToken){
         return socket.disconnect();
@@ -16,8 +16,9 @@ exports.deviceAuth = function(socket, next){
         }
         else{
             socket.userId = device.userId;
-            socket.join(device.userId);
-            next();
+            socket.join(device.userId, function(){
+                next(socket);
+            });
         }
     });
 };
@@ -31,7 +32,8 @@ exports.webAuth = function(socket, next){
     else{
         var userId = authLib.getUserId(token);
         socket.userId = userId;
-        socket.join(userId);
-        next(socket);
+        socket.join(userId, function(){
+            next(socket);
+        });
     }
 };
